@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator - MultiTool Suite</title>
+  <meta name="description" content="Generate QR codes for any text or link instantly with this free online QR Code Generator.">
+  <meta property="og:title" content="QR Code Generator - MultiTool Suite">
+  <meta property="og:description" content="Generate QR codes for any text or link instantly with this free online QR Code Generator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-github-username.github.io/tools/qr-code-generator.html">
+  <meta property="og:image" content="../assets/og-image.png">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="sticky-header">
+    <div class="container">
+      <a href="../index.html" class="site-title">MultiTool Suite</a>
+      <button id="theme-toggle" aria-label="Toggle dark/light mode"></button>
+    </div>
+  </header>
+  <main class="container">
+    <section class="tool-section">
+      <h1>QR Code Generator</h1>
+      <p>Enter text or a link to generate a QR code instantly.</p>
+      <div class="tool-ui">
+        <input type="text" id="qr-input" placeholder="Enter text or URL...">
+        <button id="generate-qr">Generate QR</button>
+      </div>
+      <div id="qr-result" class="result-area" style="min-height:120px;"></div>
+      <div class="result-actions">
+        <button id="copy-qr" title="Copy QR">Copy</button>
+        <button id="download-qr" title="Download QR">Download</button>
+        <button id="share-qr" title="Share QR">Share</button>
+      </div>
+    </section>
+  </main>
+  <footer class="footer container">
+    <p>&copy; 2024 MultiTool Suite. All rights reserved.</p>
+    <div class="owner-credit"><span class="owner-icon">👑</span> <span class="owner-name">Ankit Singh</span></div>
+  </footer>
+  <script src="../js/theme-toggle.js"></script>
+  <script src="../js/qr-code-generator.js"></script>
+</body>
+</html> 

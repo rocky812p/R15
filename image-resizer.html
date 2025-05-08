@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Resizer - MultiTool Suite</title>
+  <meta name="description" content="Resize images instantly and download in any size with this free online Image Resizer.">
+  <meta property="og:title" content="Image Resizer - MultiTool Suite">
+  <meta property="og:description" content="Resize images instantly and download in any size with this free online Image Resizer.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-github-username.github.io/tools/image-resizer.html">
+  <meta property="og:image" content="../assets/og-image.png">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .img-resizer-section { max-width: 480px; margin: 2.5rem auto 3rem auto; background: rgba(255,255,255,0.95); border-radius: 1.5rem; box-shadow: 0 8px 32px rgba(37,99,235,0.10); padding: 2.5rem 1.5rem 2rem 1.5rem; border: 1px solid #e0e7ef; backdrop-filter: blur(8px); position: relative; overflow: hidden; }
+    [data-theme="dark"] .img-resizer-section { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1px solid #334155; }
+    .img-resizer-section h1 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; background: linear-gradient(90deg, #2563eb 40%, #60a5fa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; position: relative; z-index: 1; }
+    .img-resizer-ui { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; position: relative; z-index: 1; }
+    .img-resizer-ui input[type="file"] { background: #e0e7ff; border-radius: 0.7rem; padding: 0.7rem; border: none; }
+    .img-resizer-ui input[type="number"] { width: 100px; padding: 0.5rem 0.7rem; border-radius: 0.7rem; border: 1.5px solid #e0e7f0; font-size: 1rem; }
+    .img-resizer-ui button { padding: 0.7rem 1.2rem; background: linear-gradient(135deg, #2563eb 40%, #60a5fa 100%); color: #fff; border: none; border-radius: 0.9rem; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background var(--transition), box-shadow var(--transition), color var(--transition); box-shadow: 0 2px 8px rgba(37,99,235,0.10); }
+    .img-resizer-ui button:hover { background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%); color: #fff; }
+    .img-preview { display: flex; flex-direction: column; align-items: center; gap: 0.7rem; margin-bottom: 1.2rem; }
+    .img-preview img { max-width: 100%; max-height: 220px; border-radius: 1rem; box-shadow: 0 2px 8px #2563eb22; }
+    .img-resizer-actions { display: flex; gap: 1rem; justify-content: center; margin-bottom: 0.5rem; }
+    .img-resizer-actions button { padding: 0.5rem 1.1rem; background: #e0e7ff; color: var(--primary); border: none; border-radius: 0.7rem; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background var(--transition), color var(--transition), box-shadow var(--transition); box-shadow: 0 2px 8px rgba(37,99,235,0.08); }
+    .img-resizer-actions button:hover { background: linear-gradient(135deg, #2563eb 40%, #60a5fa 100%); color: #fff; }
+    @media (max-width: 600px) { .img-resizer-section { padding: 1.2rem 0.5rem 1.2rem 0.5rem; } }
+  </style>
+</head>
+<body>
+  <header class="sticky-header">
+    <div class="container">
+      <a href="../index.html" class="site-title">MultiTool Suite</a>
+      <button id="theme-toggle" aria-label="Toggle dark/light mode"></button>
+    </div>
+  </header>
+  <main class="container">
+    <section class="img-resizer-section">
+      <h1>Image Resizer</h1>
+      <p>Resize images instantly and download in any size.</p>
+      <div class="img-resizer-ui">
+        <input type="file" id="img-upload" accept="image/*">
+        <div style="display:flex;gap:1rem;align-items:center;">
+          <input type="number" id="img-width" placeholder="Width" min="1">
+          <input type="number" id="img-height" placeholder="Height" min="1">
+          <button id="resize-img">Resize</button>
+        </div>
+        <div style="display:flex;gap:1rem;align-items:center;margin-top:0.7rem;">
+          <input type="number" id="img-percent" placeholder="Reduce by %" min="1" max="99" style="width:120px;">
+          <button id="reduce-img">Reduce</button>
+        </div>
+      </div>
+      <div class="img-preview" id="img-preview"></div>
+      <div class="img-resizer-actions">
+        <button id="download-img" title="Download resized image">Download</button>
+        <button id="share-img" title="Share resized image">Share</button>
+      </div>
+    </section>
+  </main>
+  <footer class="footer container">
+    <p>&copy; 2025 MultiTool Suite. All rights reserved.</p>
+    <div class="owner-credit"><span class="owner-icon">👑</span> <span class="owner-name">Ankit Singh</span></div>
+  </footer>
+  <script src="../js/theme-toggle.js"></script>
+  <script src="../js/image-resizer.js"></script>
+</body>
+</html> 

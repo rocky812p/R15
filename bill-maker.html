@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bill Maker - MultiTool Suite</title>
+  <meta name="description" content="Generate and download premium invoices/bills instantly with this free online Bill Maker.">
+  <meta property="og:title" content="Bill Maker - MultiTool Suite">
+  <meta property="og:description" content="Generate and download premium invoices/bills instantly with this free online Bill Maker.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-github-username.github.io/tools/bill-maker.html">
+  <meta property="og:image" content="../assets/og-image.png">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .bill-section { max-width: 700px; margin: 2.5rem auto 3rem auto; background: rgba(255,255,255,0.95); border-radius: 1.5rem; box-shadow: 0 8px 32px rgba(37,99,235,0.10); padding: 2.5rem 1.5rem 2rem 1.5rem; border: 1px solid #e0e7ef; backdrop-filter: blur(8px); position: relative; overflow: hidden; }
+    [data-theme="dark"] .bill-section { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1px solid #334155; }
+    .bill-section h1 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; background: linear-gradient(90deg, #2563eb 40%, #60a5fa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; position: relative; z-index: 1; }
+    .bill-form { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-bottom: 2rem; }
+    .bill-form label { font-weight: 600; color: var(--primary); margin-bottom: 0.2rem; display: block; }
+    .bill-form input { width: 100%; padding: 0.7rem 1rem; border-radius: 0.7rem; border: 1.5px solid #e0e7f0; font-size: 1rem; margin-bottom: 0.7rem; background: #f8fafc; color: var(--foreground); }
+    [data-theme="dark"] .bill-form input { background: #1e293b; color: #f1f5f9; border: 1.5px solid #334155; }
+    .bill-form input:focus { border-color: var(--primary); box-shadow: 0 0 0 2px #2563eb33; }
+    .bill-form .half { width: 48%; }
+    .bill-form .full { width: 100%; }
+    .bill-items { width: 100%; margin-bottom: 1.2rem; }
+    .bill-items-table { width: 100%; border-collapse: collapse; margin-bottom: 0.7rem; }
+    .bill-items-table th, .bill-items-table td { border: 1px solid #e0e7f0; padding: 0.5rem 0.7rem; text-align: left; }
+    .bill-items-table th { background: #e0e7ff; color: #2563eb; }
+    [data-theme="dark"] .bill-items-table th { background: #1e293b; color: #60a5fa; }
+    .bill-items-table td input { width: 100%; background: transparent; border: none; color: inherit; font-size: 1rem; }
+    .bill-items-table td input:focus { outline: none; border-bottom: 1.5px solid #2563eb; }
+    .bill-items-table .remove-btn { color: #f43f5e; background: none; border: none; font-size: 1.1em; cursor: pointer; }
+    .bill-items-table .remove-btn:hover { color: #be123c; }
+    .bill-actions { display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem; }
+    .bill-actions button { padding: 0.7rem 1.2rem; background: linear-gradient(135deg, #2563eb 40%, #60a5fa 100%); color: #fff; border: none; border-radius: 0.9rem; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background var(--transition), box-shadow var(--transition), color var(--transition); box-shadow: 0 2px 8px rgba(37,99,235,0.10); }
+    .bill-actions button:hover { background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%); color: #fff; }
+    .bill-preview { background: #fff; border-radius: 1.2rem; box-shadow: 0 2px 8px #2563eb22; padding: 2rem 1.2rem; margin: 0 auto; max-width: 500px; color: #1e293b; font-family: 'Segoe UI', Arial, sans-serif; }
+    [data-theme="dark"] .bill-preview { background: #1e293b; color: #f1f5f9; }
+    .bill-preview h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.2rem; }
+    .bill-preview .bill-contact { font-size: 1rem; color: #64748b; margin-bottom: 0.7rem; }
+    .bill-preview .bill-section-title { font-size: 1.1rem; font-weight: 700; color: #2563eb; margin-top: 1.2rem; margin-bottom: 0.3rem; }
+    .bill-preview table { width: 100%; border-collapse: collapse; margin-bottom: 0.7rem; }
+    .bill-preview th, .bill-preview td { border: 1px solid #e0e7f0; padding: 0.5rem 0.7rem; text-align: left; }
+    .bill-preview th { background: #e0e7ff; color: #2563eb; }
+    [data-theme="dark"] .bill-preview th { background: #1e293b; color: #60a5fa; }
+    .bill-preview .bill-total { font-weight: 700; color: #2563eb; text-align: right; }
+    @media (max-width: 600px) { .bill-section { padding: 1.2rem 0.5rem 1.2rem 0.5rem; } .bill-form .half { width: 100%; } .bill-preview { padding: 1rem 0.3rem; } }
+  </style>
+</head>
+<body>
+  <header class="sticky-header">
+    <div class="container">
+      <a href="../index.html" class="site-title">MultiTool Suite</a>
+      <button id="theme-toggle" aria-label="Toggle dark/light mode"></button>
+    </div>
+  </header>
+  <main class="container">
+    <section class="bill-section">
+      <h1>Bill Maker</h1>
+      <p>Generate and download premium invoices/bills instantly.</p>
+      <form class="bill-form" id="bill-form" autocomplete="off">
+        <div class="half"><label>Business Name</label><input type="text" id="b-biz" placeholder="Your Business"></div>
+        <div class="half"><label>Client Name</label><input type="text" id="b-client" placeholder="Client"></div>
+        <div class="half"><label>Date</label><input type="date" id="b-date"></div>
+        <div class="half"><label>Bill #</label><input type="text" id="b-num" placeholder="001"></div>
+      </form>
+      <div class="bill-items">
+        <table class="bill-items-table" id="bill-items-table">
+          <thead><tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th><th></th></tr></thead>
+          <tbody id="bill-items-body"></tbody>
+        </table>
+        <button id="add-item" style="margin-bottom:1.2rem;">+ Add Item</button>
+      </div>
+      <div class="bill-actions">
+        <button id="download-bill">Download PDF</button>
+        <button id="share-bill">Share PDF</button>
+      </div>
+      <div class="bill-preview" id="bill-preview"></div>
+    </section>
+  </main>
+  <footer class="footer container">
+    <p>&copy; 2025 MultiTool Suite. All rights reserved.</p>
+    <div class="owner-credit"><span class="owner-icon">👑</span> <span class="owner-name">Ankit Singh</span></div>
+  </footer>
+  <script src="../js/theme-toggle.js"></script>
+  <script src="../js/bill-maker.js"></script>
+</body>
+</html> 

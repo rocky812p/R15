@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Thumbnail Downloader - MultiTool Suite</title>
+  <meta name="description" content="Download thumbnails from any YouTube video instantly with this free online YouTube Thumbnail Downloader.">
+  <meta property="og:title" content="YouTube Thumbnail Downloader - MultiTool Suite">
+  <meta property="og:description" content="Download thumbnails from any YouTube video instantly with this free online YouTube Thumbnail Downloader.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-github-username.github.io/tools/youtube-thumbnail-downloader.html">
+  <meta property="og:image" content="../assets/og-image.png">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="sticky-header">
+    <div class="container">
+      <a href="../index.html" class="site-title">MultiTool Suite</a>
+      <button id="theme-toggle" aria-label="Toggle dark/light mode"></button>
+    </div>
+  </header>
+  <main class="container">
+    <section class="tool-section">
+      <h1>YouTube Thumbnail Downloader</h1>
+      <p>Paste a YouTube video URL to get its thumbnail instantly.</p>
+      <div class="tool-ui">
+        <input type="text" id="yt-url" placeholder="Paste YouTube video URL...">
+        <button id="fetch-thumb">Get Thumbnail</button>
+      </div>
+      <div id="thumb-result" class="result-area" style="min-height:120px;"></div>
+      <div class="result-actions">
+        <button id="copy-thumb" title="Copy Thumbnail">Copy</button>
+        <button id="download-thumb" title="Download Thumbnail">Download</button>
+        <button id="share-thumb" title="Share Thumbnail">Share</button>
+      </div>
+    </section>
+  </main>
+  <footer class="footer container">
+    <p>&copy; 2024 MultiTool Suite. All rights reserved.</p>
+    <div class="owner-credit"><span class="owner-icon">👑</span> <span class="owner-name">Ankit Singh</span></div>
+  </footer>
+  <script src="../js/theme-toggle.js"></script>
+  <script src="../js/youtube-thumbnail-downloader.js"></script>
+</body>
+</html> 

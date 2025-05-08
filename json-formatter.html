@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Formatter - MultiTool Suite</title>
+  <meta name="description" content="Format and beautify your JSON data instantly with this free online JSON Formatter.">
+  <meta property="og:title" content="JSON Formatter - MultiTool Suite">
+  <meta property="og:description" content="Format and beautify your JSON data instantly with this free online JSON Formatter.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-github-username.github.io/tools/json-formatter.html">
+  <meta property="og:image" content="../assets/og-image.png">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="sticky-header">
+    <div class="container">
+      <a href="../index.html" class="site-title">MultiTool Suite</a>
+      <button id="theme-toggle" aria-label="Toggle dark/light mode"></button>
+    </div>
+  </header>
+  <main class="container">
+    <section class="tool-section">
+      <h1>JSON Formatter</h1>
+      <p>Paste your JSON below and format it instantly.</p>
+      <div class="tool-ui">
+        <textarea id="json-input" rows="8" placeholder="Paste your JSON here..."></textarea>
+        <button id="format-json">Format JSON</button>
+      </div>
+      <div id="json-result" class="result-area" style="overflow-x:auto;"><pre id="json-pre" style="margin:0;"></pre></div>
+      <div class="result-actions">
+        <button id="copy-json" title="Copy result">Copy</button>
+        <button id="share-json" title="Share result">Share</button>
+      </div>
+    </section>
+  </main>
+  <footer class="footer container">
+    <p>&copy; 2024 MultiTool Suite. All rights reserved.</p>
+    <div class="owner-credit"><span class="owner-icon">👑</span> <span class="owner-name">Ankit Singh</span></div>
+  </footer>
+  <script src="../js/theme-toggle.js"></script>
+  <script src="../js/json-formatter.js"></script>
+</body>
+</html> 

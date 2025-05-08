@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Case Converter - MultiTool Suite</title>
+  <meta name="description" content="Convert text to UPPER, lower, or Title Case instantly with this free online Text Case Converter.">
+  <meta property="og:title" content="Text Case Converter - MultiTool Suite">
+  <meta property="og:description" content="Convert text to UPPER, lower, or Title Case instantly with this free online Text Case Converter.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-github-username.github.io/tools/text-case-converter.html">
+  <meta property="og:image" content="../assets/og-image.png">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="sticky-header">
+    <div class="container">
+      <a href="../index.html" class="site-title">MultiTool Suite</a>
+      <button id="theme-toggle" aria-label="Toggle dark/light mode"></button>
+    </div>
+  </header>
+  <main class="container">
+    <section class="tool-section">
+      <h1>Text Case Converter</h1>
+      <p>Convert your text to UPPER, lower, or Title Case instantly.</p>
+      <div class="tool-ui">
+        <textarea id="case-input" rows="6" placeholder="Type or paste your text here..."></textarea>
+      </div>
+      <div class="result-actions" style="margin-bottom:1.2rem;">
+        <button id="to-upper">UPPERCASE</button>
+        <button id="to-lower">lowercase</button>
+        <button id="to-title">Title Case</button>
+      </div>
+      <div id="case-result" class="result-area"></div>
+      <div class="result-actions">
+        <button id="copy-case" title="Copy result">Copy</button>
+        <button id="share-case" title="Share result">Share</button>
+      </div>
+    </section>
+  </main>
+  <footer class="footer container">
+    <p>&copy; 2024 MultiTool Suite. All rights reserved.</p>
+    <div class="owner-credit"><span class="owner-icon">👑</span> <span class="owner-name">Ankit Singh</span></div>
+  </footer>
+  <script src="../js/theme-toggle.js"></script>
+  <script src="../js/text-case-converter.js"></script>
+</body>
+</html> 
